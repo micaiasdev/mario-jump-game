@@ -29,3 +29,8 @@
         right: 100%;
     }
 }
+
+.mario {
+    width: 80px;
+    position: absolute;
+}
