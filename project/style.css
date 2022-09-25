@@ -16,13 +16,13 @@
 .game-board .pipe {
     position: absolute;
     bottom: 0;
-    width: 80px;
+    width: 65px;
     animation: pipe-animation 3s infinite linear;
 }
 
 @keyframes pipe-animation {
     from {
-        right: -80px;
+        right: -65px;
     }
 
     to {
@@ -31,6 +31,7 @@
 }
 
 .mario {
-    width: 80px;
+    width: 100px;
     position: absolute;
+    bottom: 0;
 }
