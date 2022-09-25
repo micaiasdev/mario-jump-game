@@ -17,12 +17,12 @@
     position: absolute;
     bottom: 0;
     width: 65px;
-    animation: pipe-animation 1.3s infinite linear;
+    animation: pipe-animation 2s infinite linear;
 }
 
 @keyframes pipe-animation {
     from {
-        right: -65px;
+        right: calc(0% - 65px);
     }
 
     to {
@@ -39,7 +39,7 @@
 .animation-mario-jump {
     animation: mario-jump .5s ease-out;
 }
-
+ 
 @keyframes mario-jump {
     0% {
         bottom: 0px;
