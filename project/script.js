@@ -7,16 +7,25 @@ function jump() {
         mario.classList.remove("animation-mario-jump")
     }, 500)
 }
-document.addEventListener("keydown", jump)
-
+document.addEventListener("keydown", jump)  
 const loop = setInterval(() => {
-
+  
     const pipePosition = pipe.offsetLeft
-    if(pipePosition <= 100) {
+    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
+    if(pipePosition <= 100 && pipePosition > 0 && marioPosition <= 80   ) {
         pipe.style.animation = "none"
-        pipe.style.left = "100px"
-    }
+        pipe.style.left = `${pipePosition}px` 
 
-}, Infinity)
+        mario.style.animation = "none"
+        mario.style.bottom = `${marioPosition}px`
+        mario.src = 'images/game-over.png'
+        mario.style.width = '60px'
+        mario.style.marginLeft = '35px'
+        clearInterval(loop)
+ 
+    } 
+
+}, 10)
+
 
 
