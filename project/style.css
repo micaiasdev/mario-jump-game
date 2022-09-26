@@ -4,13 +4,30 @@
     box-sizing: border-box;
 }
 
+.clouds {
+    position: absolute;
+    width: 30em;
+    animation: animation-cloud 10s infinite linear;
+}
+
+@keyframes animation-cloud {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: calc(0% - 30em);
+    }
+}
+
 .game-board {
-    width: 100%;
-    height: 500px;
-    border: solid 1px black;
+    width: 100vw;
+    height: 100vh;
+    border-bottom: solid 10px green;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    background-image: linear-gradient(rgb(56, 165, 212),rgba(56, 165, 212, 0.655) , white);
 }
 
 .game-board .pipe {
@@ -45,14 +62,12 @@
         bottom: 0px;
     }
     40% {
-        bottom: 120px;
+        bottom: 110px;
     }
     60%{
-        bottom: 120px;
+        bottom: 110px;
     }
-    70% {
-        bottom: 120px;
-    }
+
     100% {
         bottom: 0px;
     }
