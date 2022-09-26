@@ -10,9 +10,11 @@ function jump() {
 }
 document.addEventListener("keydown", jump)  
 const loop = setInterval(() => {
+  
     const cloudsPosition = clouds.offsetLeft
     const pipePosition = pipe.offsetLeft
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
+  
     if(pipePosition <= 100 && pipePosition > 0 && marioPosition <= 80   ) {
         pipe.style.animation = "none"
         pipe.style.left = `${pipePosition}px` 
