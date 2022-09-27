@@ -1,6 +1,7 @@
 const mario = document.querySelector(".mario")
 const pipe = document.querySelector(".pipe")
 const clouds = document.querySelector(".clouds")
+const refresh = document.querySelector(".refresh")
 
 function jump() {
     mario.classList.add("animation-mario-jump")
@@ -8,14 +9,16 @@ function jump() {
         mario.classList.remove("animation-mario-jump")
     }, 500)
 }
-document.addEventListener("keydown", jump)  
+document.addEventListener("keydown", jump) 
+document.addEventListener("click", jump) 
+
 const loop = setInterval(() => {
   
     const cloudsPosition = clouds.offsetLeft
     const pipePosition = pipe.offsetLeft
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
   
-    if(pipePosition <= 100 && pipePosition > 0 && marioPosition <= 80   ) {
+    if(pipePosition <= 100 && pipePosition > 0 && marioPosition <= 80) {
         pipe.style.animation = "none"
         pipe.style.left = `${pipePosition}px` 
 
@@ -28,11 +31,23 @@ const loop = setInterval(() => {
         clouds.style.animation = 'none'
         clouds.style.left = `${cloudsPosition}px`
 
+        refresh.style.display = 'block'
+
         clearInterval(loop)
  
     } 
 
 }, 10)
+
+refresh.addEventListener("click", reload)
+
+function reload() {
+    window.location.reload(true)
+}
+
+
+
+
 
 
 
