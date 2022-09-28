@@ -1,3 +1,4 @@
+
 const mario = document.querySelector(".mario")
 const pipe = document.querySelector(".pipe")
 const clouds = document.querySelector(".clouds")
@@ -39,11 +40,13 @@ const loop = setInterval(() => {
 
 }, 10)
 
+
 refresh.addEventListener("click", reload)
 
 function reload() {
     window.location.reload(true)
 }
+
 
 
 
